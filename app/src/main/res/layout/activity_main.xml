@@ -2,45 +2,95 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
-        <variable name="viewmodel" type="com.jurtz.marcel.runningtracker.vm.MainActivityVM"/>
+        <variable
+            name="viewmodel"
+            type="com.jurtz.marcel.runningtracker.vm.MainActivityVM" />
     </data>
 
-    <RelativeLayout
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+    <RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
-        tools:context="com.jurtz.marcel.runningtracker.MainActivity"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="@dimen/padding_general_activity">
+        android:background="@color/colorPrimary"
+        android:padding="@dimen/padding_general_activity"
+        tools:context="com.jurtz.marcel.runningtracker.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"/>
+        <ImageButton
+            android:id="@+id/cmdHistory"
+            style="@style/transparent_imagebutton"
+            android:src="@drawable/fa_history"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@id/cmdSettings"/>
 
-    <TextView
-        android:id="@+id/lblDistance"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="@{viewmodel.distanceText}"/>
+        <ImageButton
+            android:id="@+id/cmdSettings"
+            style="@style/transparent_imagebutton"
+            android:src="@drawable/fa_wrench"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"/>
 
-    <TextView
-        android:id="@+id/lblDuration"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/lblDistance"
-        android:text="@{viewmodel.timerText}"/>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cmdSettings">
 
-    <Button
-        android:id="@+id/cmdStart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:text="@string/cmd_run_text" />
+            <View
+                style="@style/horizontal_center_line"
+                android:layout_toLeftOf="@id/lblDescription"/>
+
+            <TextView
+                android:id="@+id/lblDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/textview_title_padding"
+                android:layout_centerHorizontal="true"
+                android:text="@{viewmodel.aggregationDescription}"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/font_size_subheader"
+                android:textStyle="bold"/>
+
+            <View
+                style="@style/horizontal_center_line"
+                android:layout_toRightOf="@id/lblDescription"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/lblDistance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@{viewmodel.distanceText}"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/font_size_header"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/lblDuration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lblDistance"
+            android:layout_centerHorizontal="true"
+            android:text="@{viewmodel.timerText}"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/font_size_subheader"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/cmdStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/button"
+            android:paddingBottom="@dimen/button_padding_vertically"
+            android:paddingLeft="@dimen/button_padding_horizontally"
+            android:paddingRight="@dimen/button_padding_horizontally"
+            android:paddingTop="@dimen/button_padding_vertically"
+            android:text="@string/cmd_run_text"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/button_font_size" />
 
     </RelativeLayout>
 

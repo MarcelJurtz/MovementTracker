@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_main);
         ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        getSupportActionBar().hide();
         MainActivityVM viewModel = new MainActivityVM();
         binding.setViewmodel(viewModel);
 

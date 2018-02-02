@@ -16,6 +16,7 @@ public class MainActivityVM {
     }
 
     //public String timerText = timer.toString();
+    public String aggregationDescription = "2018";
     public String timerText = "00:00:00";
-    public String distanceText = "0.00 KM.";
+    public String distanceText = "0.00 KM";
 }

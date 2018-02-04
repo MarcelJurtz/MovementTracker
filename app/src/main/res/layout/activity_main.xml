@@ -20,7 +20,8 @@
             style="@style/transparent_imagebutton"
             android:src="@drawable/fa_history"
             android:layout_alignParentTop="true"
-            android:layout_toLeftOf="@id/cmdSettings"/>
+            android:layout_toLeftOf="@id/cmdSettings"
+            android:onClick="@{viewmodel::onCmdHistoryClick}"/>
 
         <ImageButton
             android:id="@+id/cmdSettings"

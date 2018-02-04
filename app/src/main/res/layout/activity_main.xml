@@ -25,6 +25,8 @@
         <ImageButton
             android:id="@+id/cmdSettings"
             style="@style/transparent_imagebutton"
+            android:paddingRight="0dp"
+            android:layout_marginLeft="@dimen/imagebutton_margin"
             android:src="@drawable/fa_wrench"
             android:layout_alignParentTop="true"
             android:layout_alignParentRight="true"
@@ -79,7 +81,7 @@
 
         <Button
             android:id="@+id/cmdStart"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"

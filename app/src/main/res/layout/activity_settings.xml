@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.jurtz.marcel.runningtracker.vm.SettingsActivityVM" />
+    </data>
+
+    <RelativeLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/padding_general_activity"
+        android:background="@color/colorPrimary"
+        tools:context="com.jurtz.marcel.runningtracker.SettingsActivity"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <View
+                style="@style/horizontal_center_line"
+                android:layout_toLeftOf="@id/lblSettingsTitle"/>
+
+            <TextView
+                android:id="@+id/lblSettingsTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/textview_title_padding"
+                android:layout_centerHorizontal="true"
+                android:text="@{viewmodel.title}"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/font_size_subheader"
+                android:textStyle="bold"/>
+
+            <View
+                style="@style/horizontal_center_line"
+                android:layout_toRightOf="@id/lblSettingsTitle"/>
+
+        </RelativeLayout>
+
+        <ScrollView
+            android:id="@+id/svSettingsItems"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </ScrollView>
+    </RelativeLayout>
+</layout>

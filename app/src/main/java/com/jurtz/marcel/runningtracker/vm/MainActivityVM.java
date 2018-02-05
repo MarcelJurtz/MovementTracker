@@ -1,13 +1,8 @@
 package com.jurtz.marcel.runningtracker.vm;
-
-import android.content.Context;
-import android.content.Intent;
 import android.view.View;
-
 import com.jurtz.marcel.runningtracker.HistoryActivity;
 import com.jurtz.marcel.runningtracker.ICustomActivity;
-import com.jurtz.marcel.runningtracker.MainActivity;
-import com.jurtz.marcel.runningtracker.R;
+import com.jurtz.marcel.runningtracker.SettingsActivity;
 
 import java.util.Timer;
 
@@ -28,5 +23,9 @@ public class MainActivityVM {
 
     public void onCmdHistoryClick(View v) {
         view.loadActivity(HistoryActivity.class);
+    }
+
+    public void onCmdSettingsClick(View v) {
+        view.loadActivity(SettingsActivity.class);
     }
 }

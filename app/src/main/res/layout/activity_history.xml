@@ -22,7 +22,8 @@
 
             <View
                 style="@style/horizontal_center_line"
-                android:layout_toLeftOf="@id/lblHistoryTitle"/>
+                android:layout_toLeftOf="@id/lblHistoryTitle"
+                android:layout_toStartOf="@id/lblHistoryTitle"/>
 
             <TextView
                 android:id="@+id/lblHistoryTitle"
@@ -37,7 +38,8 @@
 
             <View
                 style="@style/horizontal_center_line"
-                android:layout_toRightOf="@id/lblHistoryTitle"/>
+                android:layout_toRightOf="@id/lblHistoryTitle"
+                android:layout_toEndOf="@id/lblHistoryTitle"/>
 
         </RelativeLayout>
 

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="padding_general_activity">25dp</dimen>
-    <dimen name="font_size_header">72dp</dimen>
-    <dimen name="font_size_subheader">48dp</dimen>
+    <dimen name="font_size_header">72sp</dimen>
+    <dimen name="font_size_subheader">48sp</dimen>
     <dimen name="button_stroke_width">6dp</dimen>
     <dimen name="button_padding_vertically">16dp</dimen>
     <dimen name="button_padding_horizontally">32dp</dimen>
-    <dimen name="button_font_size">32dp</dimen>
+    <dimen name="font_size_button">32sp</dimen>
     <dimen name="imagebutton_padding">8dp</dimen>
     <dimen name="imagebutton_margin">10dp</dimen>
     <dimen name="imagebutton_size">48dp</dimen>

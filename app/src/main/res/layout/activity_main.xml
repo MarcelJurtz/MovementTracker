@@ -19,16 +19,21 @@
             android:id="@+id/cmdHistory"
             style="@style/transparent_imagebutton"
             android:src="@drawable/fa_history"
+            android:contentDescription="@string/cmd_history_description"
             android:layout_alignParentTop="true"
             android:layout_toLeftOf="@id/cmdSettings"
+            android:layout_toStartOf="@id/cmdSettings"
             android:onClick="@{viewmodel::onCmdHistoryClick}"/>
 
         <ImageButton
             android:id="@+id/cmdSettings"
             style="@style/transparent_imagebutton"
             android:paddingRight="0dp"
+            android:paddingEnd="0dp"
             android:layout_marginLeft="@dimen/imagebutton_margin"
+            android:layout_marginStart="@dimen/imagebutton_margin"
             android:src="@drawable/fa_wrench"
+            android:contentDescription="@string/cmd_settings_description"
             android:layout_alignParentTop="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
@@ -41,7 +46,8 @@
 
             <View
                 style="@style/horizontal_center_line"
-                android:layout_toLeftOf="@id/lblDescription"/>
+                android:layout_toLeftOf="@id/lblDescription"
+                android:layout_toStartOf="@id/lblDescription"/>
 
             <TextView
                 android:id="@+id/lblDescription"
@@ -56,7 +62,8 @@
 
             <View
                 style="@style/horizontal_center_line"
-                android:layout_toRightOf="@id/lblDescription"/>
+                android:layout_toRightOf="@id/lblDescription"
+                android:layout_toEndOf="@id/lblDescription"/>
 
         </RelativeLayout>
 

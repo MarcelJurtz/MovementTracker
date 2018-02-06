@@ -2,6 +2,7 @@
     <string name="app_name">RunningTracker</string>
 
     <string name="cmd_run_text">Run</string>
+    <string name="cmd_stop_text">Stop</string>
     <string name="cmd_history_text">History</string>
     <string name="cmd_history_description">History</string>
     <string name="cmd_settings_text">History</string>

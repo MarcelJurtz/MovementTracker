@@ -4,7 +4,7 @@
     <data>
         <variable
             name="viewmodel"
-            type="com.jurtz.marcel.runningtracker.vm.MainActivityVM" />
+            type="com.jurtz.marcel.runningtracker.vm.MovementActivityVM" />
     </data>
 
     <RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -14,30 +14,6 @@
         android:background="@color/colorPrimary"
         android:padding="@dimen/padding_general_activity"
         tools:context="com.jurtz.marcel.runningtracker.MainActivity">
-
-        <ImageButton
-            android:id="@+id/cmdHistory"
-            style="@style/transparent_imagebutton"
-            android:src="@drawable/fa_history"
-            android:contentDescription="@string/cmd_history_description"
-            android:layout_alignParentTop="true"
-            android:layout_toLeftOf="@id/cmdSettings"
-            android:layout_toStartOf="@id/cmdSettings"
-            android:onClick="@{viewmodel::onCmdHistoryClick}"/>
-
-        <ImageButton
-            android:id="@+id/cmdSettings"
-            style="@style/transparent_imagebutton"
-            android:paddingRight="0dp"
-            android:paddingEnd="0dp"
-            android:layout_marginLeft="@dimen/imagebutton_margin"
-            android:layout_marginStart="@dimen/imagebutton_margin"
-            android:src="@drawable/fa_wrench"
-            android:contentDescription="@string/cmd_settings_description"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:onClick="@{viewmodel::onCmdSettingsClick}"/>
 
         <RelativeLayout
             android:layout_width="wrap_content"
@@ -55,7 +31,7 @@
                 android:layout_height="wrap_content"
                 android:padding="@dimen/textview_title_padding"
                 android:layout_centerHorizontal="true"
-                android:text="@{viewmodel.aggregationDescription}"
+                android:text="@{viewmodel.title}"
                 android:textColor="@color/colorAccent"
                 android:textSize="@dimen/font_size_subheader"
                 android:textStyle="bold"/>
@@ -99,10 +75,10 @@
             android:paddingLeft="@dimen/button_padding_horizontally"
             android:paddingRight="@dimen/button_padding_horizontally"
             android:paddingTop="@dimen/button_padding_vertically"
-            android:text="@string/cmd_run_text"
+            android:text="@string/cmd_stop_text"
             android:textColor="@color/colorAccent"
             android:textSize="@dimen/font_size_button"
-            android:onClick="@{viewmodel::onCmdRunClick}"/>
+            android:onClick="@{viewmodel::onCmdStopClick}"/>
 
     </RelativeLayout>
 </layout>

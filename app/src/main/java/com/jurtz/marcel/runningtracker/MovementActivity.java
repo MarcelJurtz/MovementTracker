@@ -5,21 +5,21 @@ import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.jurtz.marcel.runningtracker.databinding.ActivityMainBinding;
-import com.jurtz.marcel.runningtracker.vm.MainActivityVM;
+import com.jurtz.marcel.runningtracker.databinding.ActivityHistoryBinding;
+import com.jurtz.marcel.runningtracker.databinding.ActivityMovementBinding;
+import com.jurtz.marcel.runningtracker.vm.HistoryActivityVM;
+import com.jurtz.marcel.runningtracker.vm.MovementActivityVM;
 
-public class MainActivity extends AppCompatActivity implements ICustomActivity {
+public class MovementActivity extends AppCompatActivity implements ICustomActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_main);
-        ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        ActivityMovementBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_movement);
         getSupportActionBar().hide();
 
-        MainActivityVM viewModel = new MainActivityVM(this);
+        MovementActivityVM viewModel = new MovementActivityVM(this);
         binding.setViewmodel(viewModel);
-
     }
 
     @Override

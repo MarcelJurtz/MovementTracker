@@ -1,5 +1,6 @@
 package com.jurtz.marcel.runningtracker;
 
+import android.content.Context;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
@@ -39,5 +40,10 @@ public class MainActivity extends AppCompatActivity implements ICustomActivity {
     @Override
     public void returnToPreviousActivity() {
         finish();
+    }
+
+    @Override
+    public Context getContext() {
+        return getApplicationContext();
     }
 }

@@ -5,9 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.jurtz.marcel.runningtracker.databinding.ActivityHistoryBinding;
-import com.jurtz.marcel.runningtracker.databinding.ActivityMainBinding;
 import com.jurtz.marcel.runningtracker.vm.HistoryActivityVM;
-import com.jurtz.marcel.runningtracker.vm.MainActivityVM;
 
 public class HistoryActivity extends AppCompatActivity {
 

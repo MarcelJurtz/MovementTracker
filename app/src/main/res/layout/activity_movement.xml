@@ -31,7 +31,7 @@
                 android:layout_height="wrap_content"
                 android:padding="@dimen/textview_title_padding"
                 android:layout_centerHorizontal="true"
-                android:text="@{viewmodel.title}"
+                android:text="@string/title_movement"
                 android:textColor="@color/colorAccent"
                 android:textSize="@dimen/font_size_subheader"
                 android:textStyle="bold"/>

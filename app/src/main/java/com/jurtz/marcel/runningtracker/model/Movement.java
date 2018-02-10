@@ -3,6 +3,10 @@ package com.jurtz.marcel.runningtracker.model;
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
+
+import com.jurtz.marcel.runningtracker.helper.DateFormatter;
+import com.jurtz.marcel.runningtracker.helper.TimeFormatter;
+
 import java.util.Date;
 
 @Entity(tableName = "movement")

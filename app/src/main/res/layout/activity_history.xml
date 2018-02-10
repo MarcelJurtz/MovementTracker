@@ -43,14 +43,11 @@
 
         </RelativeLayout>
 
-        <ScrollView
-            android:id="@+id/svHistoryItems"
+        <android.support.v7.widget.RecyclerView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:scrollbars="vertical">
 
-            <!-- Items -->
-
-        </ScrollView>
-
+        </android.support.v7.widget.RecyclerView>
     </RelativeLayout>
 </layout>

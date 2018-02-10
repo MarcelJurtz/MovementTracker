@@ -1,6 +1,5 @@
 package com.jurtz.marcel.runningtracker.vm;
 
-import android.databinding.BaseObservable;
 import android.databinding.Bindable;
 import android.databinding.Observable;
 import android.databinding.PropertyChangeRegistry;
@@ -17,12 +16,22 @@ import android.os.Handler;
 
 public class MovementActivityVM implements Observable {
 
-    ICustomActivity view;
-    private Date movementStarted;
+    public MovementActivityVM(ICustomActivity view) {
+        this.view = view;
+        totalSeconds = 0;
+        handler = new Handler();
+        timerText = "00:00:00";
+        distanceText = "0.00 KM";
+        startMovement();
+    }
+
+    private ICustomActivity view;
+    private Date movementStartedTimestamp;
     private Handler handler;
     private PropertyChangeRegistry registry = new PropertyChangeRegistry();
 
-    private int seconds;
+    //region ViewModel Properties & Overrides
+    private int totalSeconds;
 
     private String timerText;
     @Bindable
@@ -44,16 +53,6 @@ public class MovementActivityVM implements Observable {
         registry.notifyChange(this, BR.distanceText);
     }
 
-    public MovementActivityVM(ICustomActivity view) {
-        this.view = view;
-        movementStarted = new Date();
-        seconds = 0;
-        handler = new Handler();
-        timerText = "00:00:00";
-        distanceText = "0.00 KM";
-        startMovement();
-    }
-
     @Override
     public void addOnPropertyChangedCallback(OnPropertyChangedCallback onPropertyChangedCallback) {
         registry.add(onPropertyChangedCallback);
@@ -63,27 +62,28 @@ public class MovementActivityVM implements Observable {
     public void removeOnPropertyChangedCallback(OnPropertyChangedCallback onPropertyChangedCallback) {
         registry.remove(onPropertyChangedCallback);
     }
+    //endregion
 
     private Runnable runnable = new Runnable() {
         @Override
         public void run() {
-            setTimerText(TimeFormatter.getFormattedTime(++seconds));
+            setTimerText(TimeFormatter.getFormattedTime(++totalSeconds));
             handler.postDelayed(runnable, 1000);
         }
     };
 
     private void startMovement() {
+        movementStartedTimestamp = new Date();
         handler.postDelayed(runnable, 1000);
     }
 
-    public void onCmdStopClick(View v) {
-
+    private void stopMovement() {
         // TODO TEST FOR DATABASE
         Movement movement = new Movement();
-        movement.timeStamp = movementStarted;
+        movement.timeStamp = movementStartedTimestamp;
         movement.distance = 1500;
 
-        long differenceInMillis = new Date().getTime() - movementStarted.getTime();
+        long differenceInMillis = new Date().getTime() - movementStartedTimestamp.getTime();
         long seconds = differenceInMillis / 1000;
         long hours = TimeUnit.SECONDS.toHours(seconds);
         seconds -= TimeUnit.HOURS.toSeconds (hours);
@@ -95,7 +95,10 @@ public class MovementActivityVM implements Observable {
         movement.durationHour = (int)hours;
 
         AppDatabase.getAppDatabase(view.getContext()).userDao().Insert(movement);
+    }
 
+    public void onCmdStopClick(View v) {
+        stopMovement();
         view.returnToPreviousActivity();
     }
 
